@@ -1,11 +1,22 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import "isomorphic-fetch";
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "@/styles/Home.module.css";
+import { sequenceWallet } from "@0xsequence/rainbowkit-plugin";
+import { configureChains } from "wagmi";
+const { chains, provider } = configureChains(
+  [],
+  [
+    // alchemyProvider({ apiKey: "your-api-key" }),
+    // infuraProvider({ apiKey: "your-api-key" }),
+  ]
+);
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const test = sequenceWallet({ chains });
   return (
     <>
       <Head>
@@ -26,7 +37,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -119,5 +130,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }

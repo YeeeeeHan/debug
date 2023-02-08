@@ -2,6 +2,7 @@
   "name": "debug",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "0xsequence": "^0.43.14",
+    "@0xsequence/rainbowkit-plugin": "^1.0.4",
     "@next/font": "13.1.6",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
@@ -16,6 +19,7 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "wagmi": "^0.11.5"
   }
 }
